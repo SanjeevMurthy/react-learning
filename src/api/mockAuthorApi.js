@@ -36,7 +36,6 @@ class AuthorApi {
   }
 
   static saveAuthor(author) {
-	author = Object.assign({}, author); // to avoid manipulating object passed in.
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         // Simulate server-side validation
@@ -60,7 +59,7 @@ class AuthorApi {
           authors.push(author);
         }
 
-        resolve(author);
+        resolve(Object.assign({}, author));
       }, delay);
     });
   }
