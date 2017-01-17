@@ -21,6 +21,7 @@ export function updateCourseSuccess(course){
 }
 
 export function loadCourses(){
+  debugger;
   return function(dispatch){
     dispatch(beginAjaxCall());
     return CourseApi.getAllCourses().then(courses => {
@@ -32,6 +33,7 @@ export function loadCourses(){
 }
 
 export function saveCourse(course){
+  debugger;
   return (dispatch,getState)=>{
     dispatch(beginAjaxCall());
     return CourseApi.saveCourse(course).then(savedCourse =>{
@@ -41,5 +43,5 @@ export function saveCourse(course){
       dispatch(ajaxCallError());
       throw(error);
     });
-  }
+  };
 }
